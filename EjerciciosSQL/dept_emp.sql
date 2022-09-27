@@ -68,6 +68,118 @@ VALUES(7902,'FORD','ANALYST',7566,'2011-12-03',3000,NULL,20);
 
 SELECT *
 FROM emp;
+SELECT ename,hiredate,sal FROM emp;
+CREATE TABLE salgrade(
+grade NUMERIC(1) PRIMARY KEY,
+losal NUMERIC(6,2) NOT NULL,
+hisal NUMERIC(6,2) NOT NULL);
+DESCRIBE salgrade;
+-- CONSULTA 32
+INSERT INTO salgrade
+VALUES(2,1201,1400);
+-- CONSULTA 33
+INSERT INTO salgrade 
+VALUES (3,1401,2000);
+-- CONSULTA 34
+INSERT INTO salgrade
+VALUES(4,2001,3000);
+-- CONSULTA 35
+INSERT INTO salgrade
+VALUES(5,3001,9999);
+-- CONSULTA 36
+SELECT *
+FROM salgrade;
+-- CONSULTA 37*
+SELECT *
+FROM salgrade
+WHERE losal > 1400
+AND hisal < 4000;
+-- CONSULTA 38
+SELECT ename, sal, sal+100
+FROM emp;
+-- CONSULTA 39
+SELECT ename, sal, 12*sal+100
+FROM emp;
+-- CONSULTA 40
+SELECT ename, sal, 100+sal*12
+FROM emp;
+-- CONSULTA 41
+SELECT ename, sal, 12*(sal+100)
+FROM emp;
+-- CONSULTA 42
+SELECT ename, sal, 1.20*sal
+FROM emp;
+-- CONSULTA 43
+SELECT ename, job, sal, comm
+FROM emp;
+-- CONSULTA 44
+SELECT ename, sal, 12*(sal+100)
+FROM emp
+WHERE ename='KING';
+-- CONSULTA 45
+SELECT ename, 12*sal+comm
+FROM emp
+WHERE ename='KING';
+-- CONSULTA 46
+SELECT ename AS nombre,sal salario
+FROM emp;
+-- CONSULTA 47
+SELECT ename AS nombre, 12*sal AS "Salario Anual"
+FROM emp; 
+-- CONSULTA 48
+SELECT CONCAT(ename,' ', job) AS empleado
+FROM emp;
+-- CONSULTA 49
+SELECT CONCAT(ename, ' is a ',job) AS "Detalles de Empleo"
+FROM emp;
+-- CONSULTA 50
+SELECT DISTINCT deptno
+FROM emp;
+-- CONSULTA 51
+SELECT DISTINCT deptno, job
+FROM emp;
+-- CONSULTA 52
+SELECT ename, job, deptno
+FROM emp
+WHERE job='CLERK';
+-- CONSULTA 53
+SELECT ename, sal, comm
+FROM emp
+WHERE sal <= comm;
+-- CONSULTA 54
+SELECT ename, sal
+FROM emp
+WHERE sal BETWEEN 1000 AND 1500;
+-- CONSULTA 55
+SELECT empno, ename, sal, mgr
+FROM emp
+WHERE mgr IN (7902,7566,7788);
+-- CONSULTA 56
+SELECT empno, ename,mgr,deptno
+FROM emp
+WHERE ename IN('FORD','ALLEN');
+-- CONSULTA 57
+SELECT ename
+FROM emp
+WHERE ename LIKE 'S%';
+-- CONSULTA 58
+SELECT ename, hiredate
+FROM emp
+WHERE hiredate LIKE '2011%';
+-- CONSULTA 59
+SELECT ename
+FROM emp
+WHERE ename LIKE '_A%';
+
+
+
+
+
+
+
+
+
+
 
 
 
