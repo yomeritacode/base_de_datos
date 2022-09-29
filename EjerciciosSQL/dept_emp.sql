@@ -198,12 +198,12 @@ SELECT ename, hiredate
 FROM emp
 WHERE hiredate LIKE '2011%';
 -- CONSULTA 59
-SELECT ename
+SELECT enameclientes
 FROM emp
 WHERE ename LIKE '_A%';
 SELECT *
 FROM emp
-INSERT INTO
+
 
 
 
